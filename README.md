@@ -1,10 +1,12 @@
-# Ex. No:1b 			Study of Client Server Chat Applications
+# Ex. No:1b Study of Client Server Chat Applications
 
 ## Aim: 
 To perform a study on Client Server Chat Applications
+
 ## Introduction:
 Client-server chat applications are a category of networked software that enables real-time communication between users over a network. This study explores the key components, architecture, and considerations in the development of client-server chat applications, highlighting their significance and common implementation practices.
 Client-server chat applications are software systems that enable real-time communication between users over a network. These applications follow a client-server model, where one component (the server) manages connections and facilitates communication, while the other component (the client) interacts with the server to send and receive messages. Below are the fundamental aspects and components involved in the basics of client-server chat applications:
+
 ## 1. Client-Server Model:
 •	Server:
 •	The server is a central component that listens for incoming connections from clients.
@@ -14,6 +16,7 @@ Client-server chat applications are software systems that enable real-time commu
 •	Clients are users or devices that connect to the server to participate in the chat.
 •	Each client has a unique identity, often represented by a username.
 •	Clients interact with the server to send and receive messages.
+
 ## 2. Communication Protocols:
 •	Communication between clients and servers often relies on established protocols. The choice of protocol influences the behavior of the chat application.
 •	TCP (Transmission Control Protocol):
@@ -23,14 +26,15 @@ Client-server chat applications are software systems that enable real-time commu
 •	UDP (User Datagram Protocol):
 •	Connectionless and operates in a best-effort mode.
 •	Faster but may result in message loss or disorder.
+
 ## 3. Socket Programming:
 •	Sockets:
-
 •	Sockets serve as communication endpoints.
 •	Each client and the server has a socket for sending and receiving data.
 
 •	Functions:
 •	Socket programming involves functions for creating, binding, listening, accepting connections, and sending/receiving data through sockets.
+
 ## 4. User Authentication:
 •	For security and privacy, chat applications often implement user authentication mechanisms.
 •	Users are required to provide credentials (e.g., username and password) to access the chat system.
@@ -73,6 +77,47 @@ Client-server chat applications are versatile tools that facilitate real-time co
 
 Client-server chat applications are foundational to real-time communication over networks. They incorporate principles of socket programming, communication protocols, and security mechanisms to provide a seamless user experience. Understanding the basics of client-server chat applications is essential for developers involved in networked application development, as they form the backbone of various collaborative communication systems. As technology evolves, chat applications continue to adapt, incorporating new features and technologies to enhance user interaction and connectivity.
 
+PROGRAM:
+
+CLIENT:
+```
+# Developed by :AMIRDAVARSHINI D
+# Register Number : 212225230013
+import socket
+from datetime import datetime
+s=socket.socket()
+s.bind(('localhost',8000))
+s.listen(5)
+c,addr=s.accept()
+print("Client Address : ",addr)
+now = datetime.now()
+c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
+ack=c.recv(1024).decode()
+if ack:
+print(ack)
+c.close()
+```
+
+SERVER:
+
+```
+# Developed by : AMIRDAVARSHINI D
+# Register Number : 212225230013
+import socket
+s=socket.socket()
+s.connect(('localhost',8000))
+print(s.getsockname())
+print(s.recv(1024).decode())
+s.send("acknowledgement recived from the server".encode())
+```
+
+OUTPUT:
+
+CLIENT:
+<img width="1600" height="386" alt="WhatsApp Image 2026-05-15 at 8 50 51 AM" src="https://github.com/user-attachments/assets/87c9e216-7317-4b0b-9657-b33f41886118" />
+
+SERVER:
+<img width="1600" height="370" alt="WhatsApp Image 2026-05-15 at 8 50 52 AM" src="https://github.com/user-attachments/assets/80dc2af6-4c0d-42b7-9393-701422fe2408" />
 
 ## Result:
 

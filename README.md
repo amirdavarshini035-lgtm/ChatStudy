@@ -114,10 +114,10 @@ s.send("acknowledgement recived from the server".encode())
 OUTPUT:
 
 CLIENT:
-<img width="1600" height="386" alt="WhatsApp Image 2026-05-15 at 8 50 51 AM" src="https://github.com/user-attachments/assets/87c9e216-7317-4b0b-9657-b33f41886118" />
+<img width="1247" height="702" alt="Screenshot 2026-11-18 083901" src="https://github.com/user-attachments/assets/74f7f64f-14d6-4556-a3ba-57aae968f1b3" />
 
 SERVER:
-<img width="1600" height="370" alt="WhatsApp Image 2026-05-15 at 8 50 52 AM" src="https://github.com/user-attachments/assets/80dc2af6-4c0d-42b7-9393-701422fe2408" />
+<img width="1242" height="698" alt="Screenshot 2026-11-18 083831" src="https://github.com/user-attachments/assets/c4d91805-47b1-4832-b435-774bd0a7aa50" />
 
 ## Result:
 
